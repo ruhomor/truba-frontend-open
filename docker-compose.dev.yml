@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+
+  iot-app:
+    build: ./
+    container_name: iot-app-dev
+    ports:
+      - 80:8080
+    stdin_open: true
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:80/" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    restart: unless-stopped

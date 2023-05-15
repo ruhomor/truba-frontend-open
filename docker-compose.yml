@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+
+  iot-frontend:
+    container_name: iot-frontend
+    build: ./
+    ports:
+      - 80:80
+    stdin_open: true
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:80/" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    restart: unless-stopped

@@ -1,0 +1,57 @@
+.newDevice{
+    flex: 4;
+    padding: 20px;
+}
+
+.newDeviceForm{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newDeviceItem{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.newDeviceItem>Label{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+}
+
+.newDeviceItem>input{
+    height: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.newDeviceLocation>input{
+    margin-top: 15px;
+}
+
+.newDeviceLocation>Label{
+    margin: 10px;
+    font-size: 18px;
+    color: #555555;
+}
+.newDeviceSelect{
+    height: 40px;
+    border-radius: 5px;
+}
+
+.newDeviceButton{
+    width: 200px;
+    border: none;
+    background-color: darkblue;
+    color: white;
+    padding: 7px 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}

@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "aada80e5-0fad-4f98-898a-74453ddebc07",
+		"name": "auth_localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"User123\",\n  \"password\": \"qwerty_123\",\n  \"email\": \"iot.app.everything@gmail.com\",\n  \"firstName\": \"Dick\",\n  \"secondName\": \"Van-Nick\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signin_username",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"User123\",\n  \"password\": \"qwerty_123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/verify-email?token=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"verify-email"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users as superuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7J2lkJzogMSwgJ3VzZXJuYW1lJzogJ1VzZXIxMjMnLCAndXNlcl9yb2xlJzogJ3N1cGVydXNlcid9IiwiaWF0IjoxNjM0MTY2NTI2LCJuYmYiOjE2MzQxNjY1MjYsImp0aSI6IjIyZWNlODU5LTM1YjktNGQzMC04MzY0LTIyZjgzODQ2MzZlZSIsImV4cCI6MTYzNDE2NzQyNiwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.RwCxftBjf1kr4iUckPj4oXV3TsPSHGJ0o0GFpHIY0Qc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "protected request_test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/protected",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/forgot-password?email_str",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"forgot-password"
+					],
+					"query": [
+						{
+							"key": "email_str",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7J2lkJzogMywgJ3VzZXJuYW1lJzogJ1VzZXIxMjMnLCAndXNlcl9yb2xlJzogJ3N1cGVydXNlcid9IiwiaWF0IjoxNjM3MDEwMTU2LCJuYmYiOjE2MzcwMTAxNTYsImp0aSI6IjMzYTZlMDkyLWMxMjUtNDZhYS1hYzg0LTM3MDg3ZjA0M2Y5YiIsImV4cCI6MTYzNzAxMTA1NiwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.kKWXPt1BQ__GSwJN1Hrqtsw8DFdtZYh-MI9hm6ePKZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7J2lkJzogMywgJ3VzZXJuYW1lJzogJ1VzZXIxMjMnLCAndXNlcl9yb2xlJzogJ3N1cGVydXNlcid9IiwiaWF0IjoxNjM3MDEwMTU2LCJuYmYiOjE2MzcwMTAxNTYsImp0aSI6IjMzYTZlMDkyLWMxMjUtNDZhYS1hYzg0LTM3MDg3ZjA0M2Y5YiIsImV4cCI6MTYzNzAxMTA1NiwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.kKWXPt1BQ__GSwJN1Hrqtsw8DFdtZYh-MI9hm6ePKZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7J2lkJzogMywgJ3VzZXJuYW1lJzogJ1VzZXIxMjMnLCAndXNlcl9yb2xlJzogJ3N1cGVydXNlcid9IiwiaWF0IjoxNjM3MDEwMTU2LCJuYmYiOjE2MzcwMTAxNTYsImp0aSI6IjMzYTZlMDkyLWMxMjUtNDZhYS1hYzg0LTM3MDg3ZjA0M2Y5YiIsImV4cCI6MTYzNzAxMTA1NiwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.kKWXPt1BQ__GSwJN1Hrqtsw8DFdtZYh-MI9hm6ePKZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

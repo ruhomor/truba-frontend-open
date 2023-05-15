@@ -1,0 +1,20 @@
+ p{
+    padding-top: 10px;
+     padding-bottom: 10px;
+}
+.linkAddUser{
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+ td{
+    padding: 15px;
+}
+ .btnEdit{
+     padding: 0;
+ }
+ .tableUsers{
+     margin-top: 15px;
+ }
+ .changePassword{
+     padding-top: 30px;
+ }

@@ -1,0 +1,8 @@
+.profileDetailsContainer{
+    margin-left: 15px;
+}
+
+.profileDetailsItems p, a{
+    padding-bottom: 10px;
+    text-decoration: none   ;
+}
